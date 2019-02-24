@@ -19,3 +19,10 @@ You can run the QRCode generator by typing into your shell:
 ``` shell
 $ python3 qrcode.py
 ```
+### Output
+
+#### Simple QRCode
+![OUTPUT](https://github.com/user-cube/QRCode/blob/master/qrcode.png?raw=true)
+
+#### QRCode with logo
+![OUTPUT](https://github.com/user-cube/QRCode/blob/master/QRCodeLogo.png?raw=true)
