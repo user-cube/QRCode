@@ -21,8 +21,6 @@ $ python3 qrcode.py
 ```
 ### Output
 
-#### Simple QRCode
-![OUTPUT](https://github.com/user-cube/QRCode/blob/master/qrcode.png?raw=true)
+#### Simple QRCode / QRCode with logo
+<img src="https://github.com/user-cube/QRCode/blob/master/qrcode.png?raw=true" alt="simple qrcode" width="200" height="200"/><img src="https://github.com/user-cube/QRCode/blob/master/QRCodeLogo.png?raw=true" alt="simple qrcode" width="200" height="200"/>
 
-#### QRCode with logo
-![OUTPUT](https://github.com/user-cube/QRCode/blob/master/QRCodeLogo.png?raw=true)
