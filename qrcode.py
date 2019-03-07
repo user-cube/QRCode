@@ -44,7 +44,7 @@ Menu function with options validation.
 
 """
 def menu():
-    print(" [2] - Generate code with logo\n [1] - Generate code without logo\n [0] - Exit")
+    print(" [2] - Generate QRCode with logo\n [1] - Generate QRCode without logo\n [0] - Exit")
     
     while True:
         try:
