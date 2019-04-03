@@ -49,7 +49,7 @@ def menu():
     while True:
         try:
             selector = int(input("Option: "))
-            if ( selector > 2 or selector <= 0 ):
+            if ( selector > 2 or selector < 0 ):
                 print("Option should be between 0 and 2")
             else:
                 break
