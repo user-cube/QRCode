@@ -13,6 +13,7 @@ You can also run without the virtual enviromment:
 ```shell
 $ pip install Image
 $ pip install pyqrcode
+$ pip install pypng
 ```
 ## Run
 ### Without files
