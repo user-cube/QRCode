@@ -34,8 +34,8 @@ You can run the QRCode generator by typing into your shell:
 $ python3 raedFromFile.py --file "Path to the file"
 ```
 
-#### Output
+### Output
 
-##### Simple QRCode / QRCode with logo
+#### Simple QRCode / QRCode with logo
 <img src="https://github.com/user-cube/QRCode/blob/master/qrcode.png?raw=true" alt="simple qrcode" width="200" height="200"/><img src="https://github.com/user-cube/QRCode/blob/master/QRCodeLogo.png?raw=true" alt="simple qrcode" width="200" height="200"/>
 
