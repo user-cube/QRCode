@@ -1,33 +1,29 @@
 import pyqrcode
+import argparse
+import os
 from PIL import Image
 
 """
 Function that generates the simple QRCode.
-
-Parameters
------
-linkToWebsite - Link to the Webiste that will be
-                stored at QRCode.
 """
-def generateQR(linkToWebsite):
-    url = pyqrcode.QRCode(linkToWebsite,error = 'H')
-    url.png('qrcode.png',scale=50)
+def generateQR():
+    url = pyqrcode.QRCode(CONTENT,error = 'H')
+    url.png("int.png",scale=100)
 
 """
 Add logo to the center of a pre-generated QRCode.
-
-Parameters
------
-imageName - The image name to add to the QRCode.
-
 """
-def addImage(imageName):
-    img = Image.open('qrcode.png')
+def addImage():
+    img = Image.open("int.png")
     img = img.convert("RGBA")
-    logo = Image.open(imageName)
 
+    try:
+        logo = Image.open(IMAGE)
+    except:
+        print(IMAGE + " not found")
+        
     width, height = img.size
-    logo_size = 500
+    logo_size = 700
     
     xmin = ymin = int((width / 2) - (logo_size / 2))
     xmax = ymax = int((width / 2) + (logo_size / 2))
@@ -37,35 +33,29 @@ def addImage(imageName):
 
     #put the logo in the qr code
     img.paste(logo, (xmin, ymin, xmax, ymax))
-    img.save("QRCodeLogo.png") 
+    img.save(OUTPUT) 
+    os.remove("int.png")
 
 """
 Menu function with options validation.
-
 """
-def menu():
-    print(" [2] - Generate QRCode with logo\n [1] - Generate QRCode without logo\n [0] - Exit")
-    
-    while True:
-        try:
-            selector = int(input("Option: "))
-            if ( selector > 2 or selector < 0 ):
-                print("Option should be between 0 and 2")
-            else:
-                break
-        except:
-            print("Invalid option")
-    
-    if ( selector == 0 ):
-        exit()
-    elif ( selector == 1 ):
-        linkToWebsite = input("Link: ")
-        generateQR(linkToWebsite)
+def menu():        
+    if ( LOGO == 0 ):
+        generateQR()
     else:
-        linkToWebsite = input("Link: ")
-        imageName = input("Logo: ")
-        generateQR(linkToWebsite)
-        addImage(imageName)
+        generateQR()
+        addImage()
 
-"""Main"""
-menu()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--c", help="Content to generate QRCode.", default="404")
+    parser.add_argument("--o", help="Name of the outpufile", default="qrcode.png")
+    parser.add_argument("--i", help="Image name", default="image.png")
+    parser.add_argument("--logo", help="0 if you don't want to add a logo, 1 otherwise.", default=0)
+    args = parser.parse_args()
+    CONTENT = args.c
+    LOGO = args.logo
+    OUTPUT = args.o
+    IMAGE = args.i
+    menu()
+
