@@ -19,9 +19,9 @@ $ pip install pyqrcode
 You can run the QRCode generator by typing into your shell:
 ``` shell
 $ python3 qrcode.py 
-```
+``` 
 There is multiple options to run:
-```shell
+```console
 --c Content to generate QRCode.
 --o Name of the outpufile
 --i Image name
