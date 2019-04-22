@@ -7,8 +7,11 @@ from PIL import Image
 Function that generates the simple QRCode.
 """
 def generateQR():
-    url = pyqrcode.QRCode(CONTENT,error = 'H')
-    url.png("int.png",scale=100)
+    text = pyqrcode.QRCode(CONTENT,error = 'H')
+    if ( LOGO == 0):
+        text.png(OUTPUT, scale=100)
+    else:
+        text.png("int.png",scale=100)
 
 """
 Add logo to the center of a pre-generated QRCode.
